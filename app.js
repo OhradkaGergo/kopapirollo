@@ -1,89 +1,79 @@
-function KivalasztottKo ()
-{
-    let kepKo = document.getElementById("kepKo");
-    kepKo.style.border = "2px red solid"
-    kepPapir.style.border = "none"
-    kepOllo.style.border = "none"
+let ko = document.getElementById("kepKo");
+let papir = document.getElementById("kepPapir");
+let ollo = document.getElementById("kepOllo");
+let dontes = document.getElementById("dontes");
+let sel;
+let tagValasz;
+let droidValasz;
+let tagSzamla = document.getElementById("tagPontok");
+let tagPont = 0;
+let droidSzamla = document.getElementById("droidPontok");
+let droidPont = 0;
+let droidnakValasza = document.getElementById("droidnakValasza");
+let eredmeny;
 
-    const getRandomNumber = (min, max) => {
-        min = Math.ceil(min)
-        max = Math.floor(max)
-      
-        return Math.floor(Math.random() * (max - min)) + min
-    }
-
-    const randomNumber = getRandomNumber(0, 2)
-    let gepKep = document.getElementById("gepKep")
-
-    switch(randomNumber) {
-        case 0:
-            gepKep.style.backgroundImage('url("./kő.png")')
+function KoSel() {
+    sel = 0
+    TagSelect() }
+function PapirSel() {
+    sel = 1
+    TagSelect() }
+function OlloSel() {
+    sel = 2
+    TagSelect() }
+function PontKiiras() {
+    dontes.textContent = eredmeny;
+    tagSzamla.textContent = tagPont;
+    droidSzamla.textContent = droidPont;
+}
+function TagSelect() {
+    switch(sel) {
+        case 0: 
+            tagValasz = 0;
+            ko.style.border = "4px solid red"; 
+            papir.style.border = "none";
+            ollo.style.border = "none";
             break;
+        case 1: 
+            tagValasz = 1;
+            papir.style.border = "4px solid red"; 
+            ko.style.border = "none";
+            ollo.style.border = "none";
+            break;
+        case 2: 
+            tagValasz = 2;
+            ollo.style.border = "4px solid red"; 
+            ko.style.border = "none";
+            papir.style.border = "none";
+            break; }
+    DroidSelect() 
+}
+function DroidSelect() {
+    let droidSzam = Math.floor(Math.random()*3) + 1;
+    switch (droidSzam) {
         case 1:
-            gepKep.style.backgroundImage('url("./papír.png")')
+            droidnakValasza.src = "kő.png";
+            droidValasz = 0;
+            break;
+        case 2:
+            droidnakValasza.src = "papír.png";
+            droidValasz = 1;
             break;
         case 3:
-            gepKep.style.backgroundImage('url("./olló.png")')
-            break;
-    }
+            droidnakValasza.src = "olló.png";
+            droidValasz = 2;
+            break; }
+    LvagyW()
 }
-
-function KivalasztottPapir ()
-{
-    let kepPapir = document.getElementById("kepPapir");
-    kepPapir.style.border = "2px red solid"
-    kepKo.style.border = "none"
-    kepOllo.style.border = "none"
-
-    const getRandomNumber = (min, max) => {
-        min = Math.ceil(min)
-        max = Math.floor(max)
-      
-        return Math.floor(Math.random() * (max - min)) + min
-    }
-
-    const randomNumber = getRandomNumber(0, 2)
-    let gepKep = document.getElementById("gepKep")
-
-    switch(randomNumber) {
-        case 0:
-            gepKep.style.backgroundImage('url("./kő.png")')
-            break;
-        case 1:
-            gepKep.style.backgroundImage('url("./papír.png")')
-            break;
-        case 3:
-            gepKep.style.backgroundImage('url("./olló.png")')
-            break;
-    }
-}
-
-function KivalasztottOllo ()
-{
-    let kepOllo = document.getElementById("kepOllo");
-    kepOllo.style.border = "2px red solid"
-    kepKo.style.border = "none"
-    kepPapir.style.border = "none"
-
-    const getRandomNumber = (min, max) => {
-        min = Math.ceil(min)
-        max = Math.floor(max)
-      
-        return Math.floor(Math.random() * (max - min)) + min
-    }
-
-    const randomNumber = getRandomNumber(0, 2)
-    let gepKep = document.getElementById("gepKep")
-
-    switch(randomNumber) {
-        case 0:
-            gepKep.style.backgroundImage('url("./kő.png")')
-            break;
-        case 1:
-            gepKep.style.backgroundImage('url("./papír.png")')
-            break;
-        case 3:
-            gepKep.style.backgroundImage('url("./olló.png")')
-            break;
-    }
-}
+function LvagyW() {
+    if(tagValasz == 0 && droidValasz == 0 ||tagValasz == 1 && droidValasz == 1 ||tagValasz == 2 && droidValasz == 2 ) {
+        eredmeny = "Dönthetetlen";
+        PontKiiras()}
+    else if(tagValasz == 0 && droidValasz == 2 || tagValasz == 1 && droidValasz == 0  || tagValasz == 2 && droidValasz == 1 ) {
+        tagPont += 1;
+        eredmeny = "Túl könnyű";  
+        PontKiiras()}
+    else {
+        eredmeny = "A manóba";
+        droidPont +=1;
+        PontKiiras()}}

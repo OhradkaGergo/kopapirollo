@@ -13,19 +13,20 @@
         <h2>Válassz!</h2>
 
         <div class="kepek">
-            <img src="./kő.png" alt="" onclick="KivalasztottKo()" id="kepKo">
-            <img src="./papír.png" alt="" onclick="KivalasztottPapir()" id="kepPapir">
-            <img src="./olló.png" alt="" onclick="KivalasztottOllo()" id="kepOllo">
+            <img src="./kő.png" alt="" onclick="KoSel()" id="kepKo" class="kep">
+            <img src="./papír.png" alt="" onclick="PapirSel()" id="kepPapir" class="kep">
+            <img src="./olló.png" alt="" onclick="OlloSel()" id="kepOllo" class="kep">
         </div>
 
         <div>
             <h2>A gép válasza:</h2>
-            <img src="" alt="" id="gepKep">
+            <h2 id="dontes"></h2>
+            <img src="" alt="" id="droidnakValasza" class="kep">
             <br>
-            <h3>Pontjaid:</h3>
-            <p id="emberPontok"></p>
-            <h3>Gép pontjai:</h3>
-            <p id="gepPontok"></p>
+            <h2>Pontjaid:</h2>
+            <h2 id="tagPontok">0</h2>
+            <h2>Gép pontjai:</h2>
+            <h2 id="droidPontok">0</h2>
         </div>
     </div>
     <script src="./app.js"></script>
