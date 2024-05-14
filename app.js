@@ -12,18 +12,18 @@ let droidPont = 0;
 let droidnakValasza = document.getElementById("droidnakValasza");
 let eredmeny;
 function KoSel() {
-    sel = 0
+    sel = 0;
     TagSelect() }
 function PapirSel() {
-    sel = 1
+    sel = 1;
     TagSelect() }
 function OlloSel() {
-    sel = 2
+    sel = 2;
     TagSelect() }
 function PontKiiras() {
     dontes.textContent = eredmeny;
     tagSzamla.textContent = tagPont;
-    droidSzamla.textContent = droidPont; }
+    droidSzamla.textContent = droidPont }
 function TagSelect() {
     switch(sel) {
         case 0: 
@@ -31,19 +31,19 @@ function TagSelect() {
             ko.style.border = "4px solid red"; 
             papir.style.border = "none";
             ollo.style.border = "none";
-            break;
+            break
         case 1: 
             tagValasz = 1;
             papir.style.border = "4px solid red"; 
             ko.style.border = "none";
             ollo.style.border = "none";
-            break;
+            break
         case 2: 
             tagValasz = 2;
             ollo.style.border = "4px solid red"; 
             ko.style.border = "none";
             papir.style.border = "none";
-            break; }
+            break }
     DroidSelect() }
 function DroidSelect() {
     let droidSzam = Math.floor(Math.random()*3) + 1;
@@ -51,15 +51,15 @@ function DroidSelect() {
         case 1:
             droidnakValasza.src = "kő.png";
             droidValasz = 0;
-            break;
+            break
         case 2:
             droidnakValasza.src = "papír.png";
             droidValasz = 1;
-            break;
+            break
         case 3:
             droidnakValasza.src = "olló.png";
             droidValasz = 2;
-            break; }
+            break }
     LvagyW() }
 function LvagyW() {
     if(tagValasz == 0 && droidValasz == 0 ||tagValasz == 1 && droidValasz == 1 ||tagValasz == 2 && droidValasz == 2 ) {
