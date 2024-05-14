@@ -11,7 +11,6 @@ let droidSzamla = document.getElementById("droidPontok");
 let droidPont = 0;
 let droidnakValasza = document.getElementById("droidnakValasza");
 let eredmeny;
-
 function KoSel() {
     sel = 0
     TagSelect() }
@@ -24,8 +23,7 @@ function OlloSel() {
 function PontKiiras() {
     dontes.textContent = eredmeny;
     tagSzamla.textContent = tagPont;
-    droidSzamla.textContent = droidPont;
-}
+    droidSzamla.textContent = droidPont; }
 function TagSelect() {
     switch(sel) {
         case 0: 
@@ -46,8 +44,7 @@ function TagSelect() {
             ko.style.border = "none";
             papir.style.border = "none";
             break; }
-    DroidSelect() 
-}
+    DroidSelect() }
 function DroidSelect() {
     let droidSzam = Math.floor(Math.random()*3) + 1;
     switch (droidSzam) {
@@ -63,8 +60,7 @@ function DroidSelect() {
             droidnakValasza.src = "olló.png";
             droidValasz = 2;
             break; }
-    LvagyW()
-}
+    LvagyW() }
 function LvagyW() {
     if(tagValasz == 0 && droidValasz == 0 ||tagValasz == 1 && droidValasz == 1 ||tagValasz == 2 && droidValasz == 2 ) {
         eredmeny = "Dönthetetlen";
