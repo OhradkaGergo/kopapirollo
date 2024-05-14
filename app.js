@@ -20,10 +20,6 @@ function PapirSel() {
 function OlloSel() {
     sel = 2;
     TagSelect() }
-function PontKiiras() {
-    dontes.textContent = eredmeny;
-    tagSzamla.textContent = tagPont;
-    droidSzamla.textContent = droidPont }
 function TagSelect() {
     switch(sel) {
         case 0: 
@@ -73,3 +69,7 @@ function LvagyW() {
         eredmeny = "A manóba";
         droidPont +=1;
         PontKiiras()}}
+function PontKiiras() {
+    dontes.textContent = eredmeny;
+    tagSzamla.textContent = tagPont;
+    droidSzamla.textContent = droidPont }
